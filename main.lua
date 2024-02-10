@@ -2,9 +2,11 @@ local Particle = require("particle")
 local circles = {}  -- Table to store circles
 local timer = 0  -- Variable to keep track of elapsed time
 local ballToggle = false
+
 function love.load()
     love.window.setMode(800, 600)
 end
+
 function love.mousepressed(x, y, button, istouch, presses)
     if button == 1 then
         -- Add a new circle to the table with the current mouse position and a specified radius
@@ -12,6 +14,7 @@ function love.mousepressed(x, y, button, istouch, presses)
         table.insert(circles, newCircle)
     end
 end
+
 function love.keypressed(key)
     if key == "c" then
         -- Clear the circles table when the 'c' key is pressed
@@ -21,6 +24,7 @@ function love.keypressed(key)
         ballToggle = not ballToggle
     end
 end
+
 function love.draw()
     love.graphics.setColor(1, 1, 1)
 
